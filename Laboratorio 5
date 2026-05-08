@@ -1,0 +1,97 @@
+1) Geometría: El Cilindro
+#include <stdio.h>
+#include <math.h>
+
+int main (){
+
+float area_lateral, area_total, volumen, radio, altura;
+const float pi = 3.1416;
+
+printf ("CALCULO DEL ARE DE LA SUPERFICIE Y EL VOLUMEN DE UN CILINDRO\n");
+
+printf ("Ingrese el radio del cilindro: ");
+scanf ("%f", &radio);
+printf ("Ingrese la altura del cilindro: ");
+scanf ("%f", &altura);
+
+printf ("------------------------------------------------------\n");
+
+area_lateral = 2 * pi * radio * altura;
+area_total = 2 * pi * radio * (radio + altura);
+volumen = pi * radio * radio * altura;
+
+printf ("El area lateral del cilindro es: %.2f", area_lateral);
+printf (" unidades al cuadrado\n");
+printf ("El area total del cilindro es: %.2f", area_total);
+printf (" unidades al cuadrado\n");
+printf ("El volumen del cilindro es: %.2f", volumen);
+printf (" unidades al cubo\n");
+
+return 0;
+
+}
+
+
+
+2) Sistema de Calificaciones Ponderado
+#include <stdio.h>
+int main (){
+
+float nota_final, parcial1, parcial2, parcial_ponderado, examen, proyecto;
+
+printf ("CALCULAR LA NOTA FINAL\n");
+printf ("Ingrese la nota del parcial 1: ");
+scanf ("%f", &parcial1);
+printf ("Ingrese la nota del parcial 2: ");
+scanf ("%f", &parcial2);
+printf ("Ingrese la nota del examen final: ");
+scanf ("%f", &examen);
+printf ("Ingrese la nota del proyecto integrador: ");
+scanf ("%f", &proyecto);
+
+parcial_ponderado = (parcial1 + parcial2)/2;
+nota_final = (parcial_ponderado * 0.5) + (examen * 0.3) + (proyecto * 0.2);
+
+if (nota_final >= 51)
+{
+printf ("El estudiante APROBO\n");
+}
+else
+{
+    printf ("El estudiante REPROBO");
+}
+
+return 0;
+
+}
+
+
+
+
+3) Salario Neto con Bono y Descuentos
+#include <stdio.h>
+int main (){
+
+char nombre [50];
+float salario, aguinaldo, extra_aguinaldo, meses;
+
+printf ("Ingrese el nombre completo: ");
+scanf ("%s", nombre);
+printf ("Ingrese el salario mensual: ");
+scanf ("%f", &salario);
+printf ("Ingrese el total de los meses trabajados: ");
+scanf ("%f", &meses);
+
+aguinaldo = (salario * meses)/12;
+extra_aguinaldo = aguinaldo + salario;
+
+if (meses >= 12)
+{
+    printf ("El aguinaldo del trabajador es: %.2f\n", extra_aguinaldo);
+}
+else
+{
+    printf ("El aguinaldo del trabajador es: %.2f\n", aguinaldo);
+}
+ return 0;
+}
