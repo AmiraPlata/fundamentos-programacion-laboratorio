@@ -1,0 +1,116 @@
+1) Análisis de uso digital
+#include <stdio.h>
+
+int main() {
+    int num, dig, total = 0, cont = 0, mayor5 = 0;
+    float promedio;
+
+    printf("Ingrese un numero entero positivo: ");
+    scanf("%d", &num);
+
+    while (num > 0) {
+        dig = num % 10;   // sacar ultimo digito
+        total += dig;
+        cont++;
+
+        if (dig > 5)
+            mayor5++;
+
+        num = num / 10;   // eliminar ultimo digito
+    }
+
+    promedio = (float)total / cont;
+
+    printf("Total de horas: %d\n", total);
+    printf("Apps con mas de 5 horas: %d\n", mayor5);
+    printf("Promedio de horas: %.2f\n", promedio);
+
+    return 0;
+}
+
+
+2) Consumo máximo
+#include <stdio.h>
+
+int main() {
+    int num, dig;
+    int mayor = -1, menor = 9, repeticiones = 0;
+
+    printf("Ingrese numero entero positivo: ");
+    scanf("%d", &num);
+
+    while (num > 0) {
+        dig = num % 10;
+
+        // Mayor
+        if (dig > mayor) {
+            mayor = dig;
+            repeticiones = 1;
+        } else if (dig == mayor) {
+            repeticiones++;
+        }
+
+        // Menor
+        if (dig < menor) {
+            menor = dig;
+        }
+
+        num = num / 10;
+    }
+
+    printf("Mayor consumo: %d GB\n", mayor);
+    printf("Menor consumo: %d GB\n", menor);
+    printf("Repeticiones del mayor: %d\n", repeticiones);
+
+    return 0;
+}
+
+
+3) Validación de PIN
+#include <stdio.h>
+
+int main() {
+    int pin, temp, dig, anterior;
+    int intentos = 0;
+    int valido, cont;
+
+    while (intentos < 3) {
+        printf("Ingrese PIN: ");
+        scanf("%d", &pin);
+
+        temp = pin;
+        cont = 0;
+        valido = 1;
+
+        anterior = -1;
+
+        while (temp > 0) {
+            dig = temp % 10;
+            cont++;
+
+            if (dig == anterior) {
+                valido = 0;
+            }
+
+            anterior = dig;
+            temp = temp / 10;
+        }
+
+        // Validar 4 digitos
+        if (cont != 4)
+            valido = 0;
+
+        if (valido) {
+            printf("PIN valido\n");
+            return 0;
+        } else {
+            printf("PIN invalido\n");
+        }
+
+        intentos++;
+    }
+
+    printf("Cuenta bloqueada\n");
+
+    return 0;
+}
