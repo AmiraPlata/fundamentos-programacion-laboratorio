@@ -1,0 +1,90 @@
+Problema 1)
+#include <iostream>
+using namespace std;
+
+int sumaHastaN(int N) {
+int suma = 0;
+
+for (int i = 1; i <= N; i++){
+    suma = suma + i;
+}
+return suma;
+}
+
+int main (){
+int N;
+
+cout << "Ingrese un numero entero positivo (N): ";
+cin >> N;
+
+int resultado = sumaHastaN(N);
+
+cout << "La suma desde 1 hasta " << N << " es: " << resultado << endl;
+
+return 0;
+}
+
+
+Problema 2)
+#include <iostream>
+using namespace std;
+
+float calcularPromedio (int N) {
+float nota, suma = 0;
+
+for (int i = 1; i <= N; i++) {
+    cout << "Ingrese la nota: " << i << ": ";
+    cin >> nota;
+    suma += nota;
+}
+float promedio = suma / N;
+return promedio;
+}
+
+int main (){
+int N;
+
+cout << "Ingrese la cantidad de notas: ";
+cin >> N;
+
+float resultado = calcularPromedio (N);
+
+cout << "El promedio es: " << resultado << endl;
+
+return 0;
+
+}
+
+
+
+
+Problema 3)
+#include <iostream>
+using namespace std;
+
+int contarPares (int num) {
+int digito, contador = 0;
+
+while (num > 0) {
+    digito = num % 10;
+
+    if (digito % 2 == 0){
+        contador ++;
+    }
+    num = num /10;
+}
+return contador;
+}
+
+int main (){
+int numero;
+
+cout << "Ingrese un numero entero positivo: ";
+cin >> numero;
+
+int resultado = contarPares(numero);
+
+cout << "Cantidad de digitos pares: " << resultado << endl;
+
+return 0;
+}
