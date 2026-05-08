@@ -1,0 +1,87 @@
+1) Calculadora básica con switch
+#include <iostream>
+using namespace std;
+
+int main () {
+
+float num1, num2, suma, resta, multiplicacion, division;
+int opcion;
+
+cout << "Ingrese el primer numero: ";
+cin >> num1;
+cout << "Ingrese el segundo numero: ";
+cin >> num2;
+cout << "------------------------------------------------\n";
+cout << "Menu de operaciones\n";
+cout << "1. Suma\n";
+cout << "2. Resta\n";
+cout << "3. Multiplicacion\n";
+cout << "4. Division\n";
+cout << "Seleccione una opcion: ";
+cin >> opcion;
+
+switch (opcion) {
+case 1:
+    suma = num1 + num2;
+    cout << "El total de la suma es: " <<suma;
+    break;
+case 2:
+    resta = num1 - num2;
+    cout << "El total de la resta es: " <<resta;
+    break;
+case 3:
+    multiplicacion = num1 * num2;
+    cout << "El total de la multiplicacion es: " <<multiplicacion;
+    break;
+case 4:
+    division = num1 / num2;
+    cout << "El total de la division es: " <<division;
+    break;
+default:
+    cout << "Math error";
+
+}
+return 0;
+}
+
+
+
+
+2) Clasificación de días
+#include <iostream>
+using namespace std;
+
+int main () {
+
+int opcion;
+
+cout << "CLASIFICACION DE DIAS\n";
+cout << "--------------------------------------\n";
+cout << "Ingrese el numero del 1 al 7: ";
+cin >> opcion;
+
+switch (opcion) {
+case 1:
+    cout << "Lunes - Dia Laboral";
+    break;
+case 2:
+    cout << "Martes - Dia Laboral";
+    break;
+case 3:
+    cout << "Miercoles - Dia Laboral";
+    break;
+case 4:
+    cout << "Jueves - Dia Laboral";
+    break;
+case 5:
+    cout << "Viernes - Dia Laboral";
+    break;
+case 6:
+    cout << "Sabado - Fin de Semana";
+    break;
+default:
+    cout << "Domingo - Fin de Semana";
+
+}
+return 0;
+}
