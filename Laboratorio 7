@@ -1,0 +1,71 @@
+1) Fibonacci
+#include <iostream>
+using namespace std;
+
+int main (){
+
+int N;
+int f1 = 0, f2 = 1, fib;
+int impar = 1;
+
+double suma = 0;
+
+cout << "Cuantos terminos quieres? ";
+cin >> N;
+
+for (int i = 1; i <= N; i++){
+    cout << f1 << "/" << impar << endl;
+    suma += (double)f1 / impar;
+    fib = f1 + f2;
+    f1 = f2;
+    f2 = fib;
+    impar += 2;
+    }
+cout << "Suma total (S) = " << suma;
+
+return 0;
+}
+
+
+2)  Caso: "Cálculo de la Deflexión en un Puente Colgante"
+#include <iostream>
+using namespace std;
+
+int factorial (int num) {
+    int f = 1;
+
+    for (int i = 1; i <= num; i++){
+        f = f * i;
+    }
+return f;
+}
+int main () {
+double x;
+int N;
+
+cout << "Ingrese x: ";
+cin >> x;
+
+cout << "Ingrese numero de terminos: ";
+cin >> N;
+
+double suma = 1;
+
+cout << "Serie: 1";
+
+for (int i = 1; i <= N; i++){
+    int exp = 2 * i;
+
+    cout << " + " << x << "^" << exp << "/" << exp << "!";
+
+    double potencia = 1;
+    for (int j = 1; j <= exp; j++){
+        potencia = potencia * x;
+    }
+    double termino = potencia / factorial (exp);
+    suma = suma + termino;
+}
+cout << endl;
+cout << "Resultado: cosh(" << x << ") = " << suma;
+return 0;
+}
