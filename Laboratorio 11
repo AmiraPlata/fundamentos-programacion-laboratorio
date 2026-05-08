@@ -1,0 +1,142 @@
+Problema 1)
+#include <iostream>
+using namespace std;
+
+void leerDatos(float &x, int &y){
+cout << "Ingrese la base (x): ";
+cin >> x;
+cout << "Ingrese la potencia (y): ";
+cin >> y;
+}
+
+float POTENCIA(float x, int y){
+float resultado = 1;
+
+for (int i = 1; i <= y; i++) {
+    resultado = resultado * x;
+}
+return resultado;
+}
+
+void mostrarResultado(float x, int y, float resultado){
+    if (y == 0){
+    cout << x << "^0 = 1" << endl;
+    return;
+    }
+    cout << x << "^" << y << " = ";
+
+    for (int i = 1; i <= y; i++) {
+    cout << x;
+
+    if (i < y){
+        cout << " * ";
+    }
+    }
+    cout << " = " << resultado << endl;
+}
+
+int main (){
+float x, resultado;
+int y;
+
+leerDatos (x, y);
+resultado = POTENCIA(x, y);
+mostrarResultado(x, y, resultado);
+
+return 0;
+}
+
+
+
+
+Problema 2)
+#include <iostream>
+using namespace std;
+
+void leerFecha (int &dia, int &mes, int &anio){
+cout << "Ingrese el dia: ";
+cin >> dia;
+cout << "Ingrese el mes: ";
+cin >> mes;
+cout << "Ingrese el anio: ";
+cin >> anio;
+}
+
+string nombreMes(int mes){
+switch (mes){
+    case 1: return "Enero";
+    case 2: return "Febrero";
+    case 3: return "Marzo";
+    case 4: return "Abril";
+    case 5: return "Mayo";
+    case 6: return "Junio";
+    case 7: return "Julio";
+    case 8: return "Agosto";
+    case 9: return "Septiembre";
+    case 10: return "Octubre";
+    case 11: return "Noviembre";
+    case 12: return "Diciembre";
+    default: return "Mes invalido";
+}
+}
+
+int convertirAnio(int anio){
+if (anio <= 25){
+    return 2000 + anio;
+}else{
+return 1900 + anio;
+}
+}
+
+void LITERAL(int dia, int mes, int anio){
+string mesTexto = nombreMes(mes);
+int anioCompleto = convertirAnio(anio);
+
+cout << dia << " de " << mesTexto << " de " << anioCompleto << endl;
+}
+
+int main (){
+int dia, mes, anio;
+
+leerFecha (dia, mes, anio);
+LITERAL(dia, mes, anio);
+
+return 0;
+}
+
+
+
+
+
+Problema 3)
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+void leerDatos (float &R, int &n){
+cout << "Ingrese numero real: ";
+cin >> R;
+cout << "Ingrese cantidad de decimales: ";
+cin >> n;
+}
+
+float redondear(float R, int n){
+float factor = pow(10, n);
+float resultado = round (R * factor) / factor;
+return resultado;
+}
+
+void mostrarResultado (float resultado){
+cout << "Numero redondeado: " << resultado << endl;
+}
+
+int main (){
+float R, resultado;
+int n;
+
+leerDatos (R, n);
+resultado = redondear (R, n);
+mostrarResultado(resultado);
+
+return 0;
+}
