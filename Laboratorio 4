@@ -1,0 +1,71 @@
+1) REGISTRO DE ESTUDIANTE
+#include <stdio.h>
+int main()
+{
+   
+    int edad, semestre;
+    char nombre_completo [50], carrera [50];
+   
+    printf ("Registro de Datos\n");
+    printf ("Ingrese nombre completo:");
+    scanf ("%s", nombre_completo);
+    printf ("Ingrese edad:");
+    scanf ("%d", edad);
+    printf ("Ingrese carrera:");
+    scanf ("%s", carrera);
+    printf ("Ingrese semestre:");
+    scanf ("%d", semestre);
+   
+    printf ("Datos del Estudiante\n");
+    printf ("Nombre: %s\n", nombre_completo);
+    printf ("Edad: %d\n", edad);
+    printf ("Carrera: %s\n", carrera);
+    printf ("Semestre: %d\n", semestre);
+
+    return 0;
+}
+
+
+2) COMPRA EN UNA TIENDA
+#include <stdio.h>
+int main() {
+
+    char nombre[50];
+    int cantidad;
+    float total;
+
+    printf("Ingrese el nombre del cliente: ");
+    scanf("%s", nombre);
+
+    printf("Ingrese la cantidad de productos: ");
+    scanf("%d", &cantidad);
+
+    total = cantidad * 8;
+
+    printf("\nCliente: %s\n", nombre);
+    printf("Total a pagar: Bs %.2f\n", total);
+
+    return 0;
+}
+
+
+
+
+3) ÁREA DE UN TRIÁNGULO
+#include <stdio.h>
+
+int main() {
+    float base, altura, area;
+
+    printf("Ingrese la base: ");
+    scanf("%f", &base);
+
+    printf("Ingrese la altura: ");
+    scanf("%f", &altura);
+
+    area = (base * altura) / 2;
+
+    printf("El area del triangulo es: %.2f\n", area);
+
+    return 0;
+}
